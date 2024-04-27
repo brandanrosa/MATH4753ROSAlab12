@@ -1,6 +1,6 @@
 #' mylam
 #'
-#' This function displays histograms of the log(lambda) and ybar statics from a given sample
+#' This function displays histograms of the log(lambda) and ybar statistics from a given sample
 #'
 #' @param iter number of iterations
 #' @param y sample data
