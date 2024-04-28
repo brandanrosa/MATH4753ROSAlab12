@@ -26,34 +26,34 @@ mylam <- function(iter, y, alpha = 0.05) {
   }
 
   xstat1 <- apply(X = mat, MARGIN = 2, FUN = "loglam")
-  h1 <- hist(xstat1, plot = FALSE)
-  r1 <- h1$density/max(h1$density)
+    h1 <- graphics::hist(xstat1, plot = FALSE)
+    r1 <- h1$density/max(h1$density)
 
-  hist1 <- hist(x = xstat1,
+  hist1 <- graphics::hist(x = xstat1,
                 freq = FALSE,
-                col = rgb(r1, r1^2, 0),
+                col = grDevices::rgb(r1, r1^2, 0),
                 xlab = "log(lambda)",
                 main = "Sampling Distribution of log(lambda)",
   )
   hist1
 
-  loglamcut <- quantile(xstat1, probs = alpha)
-  abline(v = loglamcut, col = 'blue', lwd=2)
+  loglamcut <- stats::quantile(xstat1, probs = alpha)
+  graphics::abline(v = loglamcut, col = 'blue', lwd=2)
 
   xstat2 <- apply(X = mat, MARGIN = 2, FUN = "meany")
-  h2 <- hist(xstat2, plot = FALSE)
-  r2 <- h2$density/max(h2$density)
+    h2 <- graphics::hist(xstat2, plot = FALSE)
+    r2 <- h2$density/max(h2$density)
 
-  hist2 <- hist(x = xstat2,
+  hist2 <- graphics::hist(x = xstat2,
                 freq = FALSE,
-                col = rgb(r2, r2^2, 0),
+                col = grDevices::rgb(r2, r2^2, 0),
                 xlab = "Ybar",
                 main = "Sampling Distribution of Ybar",
   )
   hist2
 
-  ybarcut <- quantile(x = xstat2, probs = 1-alpha)
-  abline(v = ybarcut, col = 'blue', lwd=2)
+  ybarcut <- stats::quantile(x = xstat2, probs = 1-alpha)
+  graphics::abline(v = ybarcut, col = 'blue', lwd=2)
 
   ybarcutest <- sqrt((-2 * loglamcut)/n)
 

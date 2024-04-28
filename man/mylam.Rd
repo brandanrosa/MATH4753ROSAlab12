@@ -17,7 +17,7 @@ mylam(iter, y, alpha = 0.05)
 two histograms and other information which can be called
 }
 \description{
-This function displays histograms of the log(lambda) and ybar statics from a given sample
+This function displays histograms of the log(lambda) and ybar statistics from a given sample
 }
 \examples{
 \dontrun{mylam(iter=10000,y=y,alpha=0.05)}
