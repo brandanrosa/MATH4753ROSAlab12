@@ -3,4 +3,5 @@
 export(mylam)
 export(mypower)
 export(shinyboots)
+export(shinypower)
 importFrom(shiny,runApp)
